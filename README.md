@@ -7,5 +7,3 @@ Um dashboard executivo de vendas passou a mostrar números errados após mudanç
 ## Solução
 
 Implementação de um contrato de dados versionado e um validador que executa antes de qualquer publicação. Se o dado violar o contrato, o pipeline é bloqueado e o time é alertado.
-
-## Arquitetura
