@@ -1,0 +1,41 @@
+version: "1.0"
+dataset: pedidos
+owner: time-vendas
+description: Pedidos de vendas multi-canal
+
+schema:
+  order_id: string
+  customer_id: string
+  status: string
+  valor_total: float
+  data_pedido: date
+  updated_at: timestamp
+
+domain:
+  status:
+    allowed_values:
+      - pendente
+      - aprovado
+      - enviado
+      - entregue
+      - cancelado
+
+format:
+  valor_total:
+    decimal_separator: "."
+    min_value: 0
+    max_value: 100000
+
+required:
+  - order_id
+  - customer_id
+  - status
+  - valor_total
+  - data_pedido
+
+unique:
+  - order_id
+
+sla:
+  freshness: "24h"
+  availability: "99%"
